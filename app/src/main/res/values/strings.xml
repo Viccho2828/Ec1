@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EC1_ChoqueGomez</string>
+    <string name="Calcular" />
+    <string name="Calcularr" />
+    <string name="Subtitulo">Ingrese Numero</string>
+    <string name="Subtitle">Calcular</string>
+    <string name="respuesta" />
+</resources>
