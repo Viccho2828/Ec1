@@ -5,4 +5,5 @@
     <string name="Subtitulo">Ingrese Numero</string>
     <string name="Subtitle">Calcular</string>
     <string name="respuesta" />
+    <string name="valsiguiente">Siguiente</string>
 </resources>

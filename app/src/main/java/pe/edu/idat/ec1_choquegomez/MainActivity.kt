@@ -1,7 +1,9 @@
 package pe.edu.idat.ec1_choquegomez
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.CheckBox
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -18,21 +20,40 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
 
         binding.btncalcular.setOnClickListener(this)
+        binding.btnnext.setOnClickListener(this)
     }
 
 
 
     override fun onClick(p0: View?) {
-        val horas = binding.etnumero1.text.toString().toInt()
-
-        val sal: Int
-
-        if (horas <= 40) {
-            sal = horas * 16
-        } else {
-            val horasExtras = horas - 40
-            sal = (40 * 16) + (horasExtras * 20)
+        p0?.let { view ->
+            when (view.id) {
+                R.id.btnnext -> irEjercicio1()
+                R.id.btncalcular -> calcularHoras()
+            }
         }
-        binding.result.text = "El salario semanal es: S/. $sal"
+    }
+
+
+
+        private fun irEjercicio1() {
+            val intentEjercicio1 = Intent(
+                this, Ejercicio1::class.java)
+            startActivity(intentEjercicio1)
         }
+
+        private fun calcularHoras(){
+            val horas = binding.etnumero1.text.toString().toInt()
+
+            val sal: Int
+
+            if (horas <= 40) {
+                sal = horas * 16
+            } else {
+                val horasExtras = horas - 40
+                sal = (40 * 16) + (horasExtras * 20)
+            }
+            binding.result.text = "El salario semanal es: S/. $sal"
+        }
+
     }
